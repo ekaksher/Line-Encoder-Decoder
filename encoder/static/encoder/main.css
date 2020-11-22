@@ -1,0 +1,23 @@
+.mt-15{
+  margin-top: 15% !important;
+}
+.mb-10{
+  border-bottom:solid thin antiquewhite;
+}
+body{
+  background-color: black;
+  color: antiquewhite;
+}
+.links{
+  text-decoration: none !important;
+  color: wheat;
+}
+.twoblock{
+  color: wheat;
+  background-color: dimgray;
+  height: 150px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
