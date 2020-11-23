@@ -329,7 +329,7 @@ def plot_rz(sequence):
         ax.annotate(str(j),xy=(i+0.2,0))
     plt.show()
 
-if __name__=='__main__':
-    print('Enter the binary bits sequnce of length  bits : \n')
-    li = list(map(int,list(input())))
-    plot_rz(li)
+# if __name__=='__main__':
+#     print('Enter the binary bits sequnce of length  bits : \n')
+#     li = list(map(int,list(input())))
+#     plot_rz(li)
