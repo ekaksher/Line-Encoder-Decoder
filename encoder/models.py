@@ -21,6 +21,7 @@ class Encoder(models.Model):
     fixed_sequence = models.BooleanField(default=False,blank=True)
     fixed_size = models.IntegerField(blank=True)
     fixed_freq = models.IntegerField(blank=True)
+    pos_logic = models.BooleanField(default=True,blank=True)
     scheme_choice = models.CharField(max_length=50,
                                     choices=SCHEMES,
                                     default="Unipolar")

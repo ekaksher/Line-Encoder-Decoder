@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'matplotlib',
+    'numpy',
+    'io',
+    'base64',
 ]
 
 MIDDLEWARE = [

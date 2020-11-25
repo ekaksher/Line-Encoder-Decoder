@@ -1,6 +1,15 @@
 {% extends "encoder/base.html" %}
 {% block content %}
    <center>
-    <h1 class="display-2">Title Here!</h1>
+    {% if scrambled %}
+        <h1 class="display-2">{{scrambling_choice}}</h1>
+    {% else %}
+        <h1 class="display-2">{{scheme_choice}}</h1>
+    {% endif %}
+    <div class="container">
+        <p > The Largest Palindromic SubString Is {{palindrome}}
+        </p>
+    <img src = "data:image/png;base64,{{ uri}} " class = 'img-fluid' alt = 'Encoded Signal'>
+    </div>
    </center>
 {% endblock content %}

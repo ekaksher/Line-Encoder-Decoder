@@ -46,9 +46,14 @@
             <div id = "custom " class="mt-25">{{form.custom}} I would like to enter Signal Manually.</div>
             <div id="bit_size" class='mt-25'>Enter Number Of Bits To Be Generated : {{form.bit_size}}</div>
             <div id ="fixed_sequence" class='mt-25'> {{form.fixed_sequence}} I require some fixed sequence of consecutive zeros.</div>
-            <div id='fixed_seq' class='mt-25' style="display: none;">Enter Number Of Consecutive Zeros Required : {{form.fixed_size}} <br>
-                Enter Number Of Such Sequences Required : {{form.fixed_freq}}</div>
-            <div id ='schemes' class='mt-25'>Select Encoding Scheme {{form.scheme_choice}}</div>
+            <div id='fixed_seq' class='mt-25' style="display: none;">
+                <span class='mt-25'>Enter Number Of Consecutive Zeros Required : {{form.fixed_size}}</span> <br><br>
+                <span class='mt-25'>Enter Number Of Such Sequences Required : {{form.fixed_freq}}</span>
+            </div>
+            <div id ='schemes' class='mt-25'>
+                Select Encoding Scheme {{form.scheme_choice}}
+                <span class='ml-5'>{{form.pos_logic}} <- Deselect This To Use Negative Logic For Plots. </span>
+            </div>
             <div id = 'scrambling' class='mt-25' style="display: none;">Select Scrambling Scheme {{form.scrambling_choice}}</div>
         </div>
         <button type="submit" class='btn btn-primary mt-25'>Submit</button>

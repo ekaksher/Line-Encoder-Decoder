@@ -1,6 +1,9 @@
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-
+from io import BytesIO
+import base64
 def unipolar(sequence, pos_logic= True):
     bit = 1
     if not pos_logic:
@@ -73,8 +76,6 @@ def Manchester(sequence,ieee_scheme=False):
             k+=1
             y_axis.append(-bit)
             x_axis.append(k)
-    print(x_axis)
-    print(y_axis)
     return x_axis,y_axis
 
 def Differential_manchester(sequence,pos_logic= True):
@@ -100,8 +101,6 @@ def Differential_manchester(sequence,pos_logic= True):
             bit = bit * (-1)
             y_axis.append(bit)
             x_axis.append(k)
-    print(x_axis)
-    print(y_axis)
     return x_axis,y_axis
 
 def AMI(sequence,pos_logic=True):
@@ -116,7 +115,6 @@ def AMI(sequence,pos_logic=True):
             bit *= -1
         else:
             sequence_mod[i+1] = 0
-    print(sequence_mod)
     return sequence_mod
 
 def check_consecutive_zeros(i,sequence,size):
@@ -148,8 +146,6 @@ def B8ZS(sequence,starting_bit_pos = True):
             inp2.append(sequence_mod[i+1])
             i+=1
     inp2.insert(0,sequence_mod[0])
-    print(sequence_mod)
-    print(inp2)
     return inp2
 
 def HDB3(sequence):
@@ -197,8 +193,13 @@ def plot_unipolar(sequence,pos=True):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(x,sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_nrz_l(sequence,pos=True):
     ax = plt.subplot()
@@ -214,8 +215,13 @@ def plot_nrz_l(sequence,pos=True):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(x,sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_nrz_i(sequence,pos=True):
     ax = plt.subplot()
@@ -235,8 +241,13 @@ def plot_nrz_i(sequence,pos=True):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(x,sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_manchester(sequence,ieee=False):
     ax = plt.subplot()
@@ -252,8 +263,13 @@ def plot_manchester(sequence,ieee=False):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(range(len(sequence)),sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_differential_manchester(sequence,pos = True):
     ax = plt.subplot()
@@ -269,8 +285,13 @@ def plot_differential_manchester(sequence,pos = True):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(range(len(sequence)),sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_ami(sequence,pos= True):
     ax = plt.subplot()
@@ -285,8 +306,13 @@ def plot_ami(sequence,pos= True):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(range(len(sequence)),sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_B8ZS(sequence,pos=True):
     ax = plt.subplot()
@@ -301,8 +327,13 @@ def plot_B8ZS(sequence,pos=True):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(range(len(sequence)),sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_HDB3(sequence):
     ax = plt.subplot()
@@ -313,8 +344,13 @@ def plot_HDB3(sequence):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(range(len(sequence)),sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
 
 def plot_rz(sequence):
     ax = plt.subplot()
@@ -326,10 +362,10 @@ def plot_rz(sequence):
     plt.axhline(0,color='black')
     plt.axvline(0,color='black')
     for i,j in zip(range(len(sequence)),sequence):
-        ax.annotate(str(j),xy=(i+0.2,0))
-    plt.show()
-
-# if __name__=='__main__':
-#     print('Enter the binary bits sequnce of length  bits : \n')
-#     li = list(map(int,list(input())))
-#     plot_rz(li)
+        ax.annotate(str(j),xy=(i+0.25,0))
+    buf = BytesIO()
+    plt.savefig(buf, format='png', dpi=300)
+    image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
+    buf.close()
+    plt.close()
+    return image_base64
