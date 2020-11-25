@@ -29,3 +29,7 @@ Simulation of Line Coding Schemes : `B8ZS` , `HDB3`
 -----------------------------------------------------------------------------
 
 Working Demo Of This Project Is Avaiable here [here](https://lineencoderdecoder.herokuapp.com)
+
+**Upcoming Changes**
+1. Improve UI
+2. Use PlotDigitiser to implement the decoding part.
