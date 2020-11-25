@@ -8,7 +8,7 @@ Simulation of Line Coding Schemes : `B8ZS` , `HDB3`
 -------------------------------------------------------------------------
 
 
-**To Run This On Your Local Server**
+**To Run This On Your Local Machine**
 1. Clone This Repo
 
         git clone https://github.com/ekaksher/Line-Encoder-Decoder
