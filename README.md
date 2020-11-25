@@ -3,7 +3,7 @@
 
 Simulation of Line Coding Schemes : `Unipolar`,`NRZ-L`, `NRZ-I`, `Polar-RZ`,`Differential Manchester`,`Manchester` , `AMI`.
 
-Simulation of Line Coding Schemes : `B8ZS` , `HDB3`
+Simulation of Scrambling Schemes : `B8ZS` , `HDB3`
 
 -------------------------------------------------------------------------
 
