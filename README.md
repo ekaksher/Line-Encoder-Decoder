@@ -18,7 +18,7 @@ Simulation of Line Coding Schemes : `B8ZS` , `HDB3`
 
         cd Line-Encoder-Decoder
         
-3. Get Requirements
+3. Install Requirements
     
         pip3 install -r requirements.txt
      
